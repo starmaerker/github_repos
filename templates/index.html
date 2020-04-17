@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div><a href="{{ url_for('search', lang="Python") }}">Python</a></div>
+    {% for result in results %}
+        <div><p>{{ result + 1 }}.<b>{{ results[result][0] }}</b> Beschreibung: {{ results[result][1] }} Stars: {{ results[result][2] }}</p></div>
+    {% endfor %}
+{% endblock %}
