@@ -1,8 +1,17 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div><a href="{{ url_for('search', lang="Python") }}">Python</a></div>
-    {% for result in results %}
-        <div><p>{{ result + 1 }}.<b>{{ results[result][0] }}</b> Beschreibung: {{ results[result][1] }} Stars: {{ results[result][2] }}</p></div>
-    {% endfor %}
+    <div>
+        <a href="{{ url_for('search', lang="python") }}">Python</a>
+        <a href="{{ url_for('search', lang="javascript") }}">JavaScript</a>
+        <a href="{{ url_for('search', lang="java") }}">Java</a>
+        <a href="{{ url_for('search', lang="csharp") }}">C#</a>
+        <a href="{{ url_for('search', lang="swift") }}">Swift</a>
+        <a href="{{ url_for('search', lang="haskell") }}">Haskell</a>
+        <a href="{{ url_for('search', lang="php") }}">PHP</a>
+        <a href="{{ url_for('search', lang="ruby") }}">Ruby</a>
+        <a href="{{ url_for('search', lang="dart") }}">Dart</a>
+        <a href="{{ url_for('search', lang="cobol") }}">Cobol</a>
+    </div>
+
 {% endblock %}
