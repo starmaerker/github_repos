@@ -6,6 +6,8 @@
     <h1>{{ lang }}</h1>
 
         {% for result in results %}
-        <div><p>{{ result + 1 }}.<b>{{ results[result][0] }}</b> Beschreibung: {{ results[result][1] }} Stars: {{ results[result][2] }}</p></div>
+        <div><p>{{ result + 1 }}.<b>{{ results[result][0] }}</b> Beschreibung: {{ results[result][1] }} Stars: {{ results[result][2] }}</p>
+            <img src="{{ results[result][3] }}">
+        </div>
         {% endfor %}
 {% endblock %}
