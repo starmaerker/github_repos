@@ -1,37 +1,50 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div>
-        <a href="{{ url_for('search', lang="python") }}">Python</a>
-        <br>
-        <br>
-        <a href="{{ url_for('search', lang="javascript") }}">JavaScript</a>
-        <br>
-        <br>
-        <a href="{{ url_for('search', lang="java") }}">Java</a>
-        <br>
-        <br>
-        <a href="{{ url_for('search', lang="csharp") }}">C#</a>
-        <br>
-        <br>
-        <a href="{{ url_for('search', lang="swift") }}">Swift</a>
-        <br>
-        <br>
-        <a href="{{ url_for('search', lang="haskell") }}">Haskell</a>
-        <br>
-        <br>
-        <a href="{{ url_for('search', lang="php") }}">PHP</a>
-        <br>
-        <br>
-        <a href="{{ url_for('search', lang="ruby") }}">Ruby</a>
-        <br>
-        <br>
-        <a href="{{ url_for('search', lang="dart") }}">Dart</a>
-        <br>
-        <br>
-        <a href="{{ url_for('search', lang="cobol") }}">Cobol</a>
-        <br>
-        <br>
+    <h1>Github repos per language with the most stars.</h1>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm">
+                <a href="{{ url_for('search', lang="python") }}">Python</a>
+            </div>
+            <div class="col-sm">
+                <a href="{{ url_for('search', lang="javascript") }}">JavaScript</a>
+            </div>
+            <div class="col-sm">
+                <a href="{{ url_for('search', lang="java") }}">Java</a>
+            </div>
+            <div class="col-sm">
+                <a href="{{ url_for('search', lang="csharp") }}">C#</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <a href="{{ url_for('search', lang="swift") }}">Swift</a>
+            </div>
+            <div class="col-sm">
+                <a href="{{ url_for('search', lang="haskell") }}">Haskell</a>
+            </div>
+            <div class="col-sm">
+                <a href="{{ url_for('search', lang="php") }}">PHP</a>
+            </div>
+            <div class="col-sm">
+                <a href="{{ url_for('search', lang="ruby") }}">Ruby</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <a href="{{ url_for('search', lang="dart") }}">Dart</a>
+            </div>
+            <div class="col-sm">
+                <a href="{{ url_for('search', lang="kotlin") }}">Kotlin</a>
+            </div>
+            <div class="col-sm">
+                <a href="{{ url_for('search', lang="sql") }}">SQL</a>
+            </div>
+            <div class="col-sm">
+                <a href="{{ url_for('search', lang="go") }}">GP</a>
+            </div>
+        </div>
     </div>
 
 {% endblock %}
