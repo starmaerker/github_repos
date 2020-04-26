@@ -13,8 +13,8 @@ def index():
 
 @app.route('/search/<lang>')
 def search(lang):
-    results = search_repos(lang)
-    return render_template('search.html', lang=lang, results=results)
+    results, incomplete = search_repos(lang)
+    return render_template('search.html', lang=lang, results=results, incomplete=incomplete)
 
 
 if __name__ == '__main__':
