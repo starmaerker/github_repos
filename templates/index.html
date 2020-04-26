@@ -6,44 +6,58 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm">
-                <a href="{{ url_for('search', lang="python") }}"><button type="button" class="btn {{ color[0] }}">Python</button></a>
+                <a href="{{ url_for('search', lang="python") }}"><button type="button" class="btn btn-primary">Python</button></a>
             </div>
             <div class="col-sm">
-                <a href="{{ url_for('search', lang="javascript") }}"><button type="button" class="btn {{ color[1] }}">JavaScript</button></a>
+                <a href="{{ url_for('search', lang="javascript") }}"><button type="button" class="btn btn-primary">JavaScript</button></a>
             </div>
             <div class="col-sm">
-                <a href="{{ url_for('search', lang="java") }}"><button type="button" class="btn {{ color[2] }}">Java</button></a>
+                <a href="{{ url_for('search', lang="java") }}"><button type="button" class="btn btn-primary">Java</button></a>
             </div>
             <div class="col-sm">
-                <a href="{{ url_for('search', lang="csharp") }}"><button type="button" class="btn {{ color[3] }}">C#</button></a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm">
-                <a href="{{ url_for('search', lang="swift") }}"><button type="button" class="btn {{ color[4] }}">Swift</button></a>
-            </div>
-            <div class="col-sm">
-                <a href="{{ url_for('search', lang="haskell") }}"><button type="button" class="btn {{ color[5] }}">Haskell</button></a>
-            </div>
-            <div class="col-sm">
-                <a href="{{ url_for('search', lang="php") }}"><button type="button" class="btn {{ color[6] }}">PHP</button></a>
-            </div>
-            <div class="col-sm">
-                <a href="{{ url_for('search', lang="ruby") }}"><button type="button" class="btn {{ color[7] }}">Ruby</button></a>
+                <a href="{{ url_for('search', lang="csharp") }}"><button type="button" class="btn btn-primary">C#</button></a>
             </div>
         </div>
         <div class="row">
             <div class="col-sm">
-                <a href="{{ url_for('search', lang="dart") }}"><button type="button" class="btn {{ color[8] }}">Dart</button></a>
+                <a href="{{ url_for('search', lang="swift") }}"><button type="button" class="btn btn-secondary">Swift</button></a>
             </div>
             <div class="col-sm">
-                <a href="{{ url_for('search', lang="kotlin") }}"><button type="button" class="btn {{ color[9] }}">Kotlin</button></a>
+                <a href="{{ url_for('search', lang="haskell") }}"><button type="button" class="btn btn-secondary">Haskell</button></a>
             </div>
             <div class="col-sm">
-                <a href="{{ url_for('search', lang="c") }}"><button type="button" class="btn {{ color[10] }}">C</button></a>
+                <a href="{{ url_for('search', lang="php") }}"><button type="button" class="btn btn-secondary">PHP</button></a>
             </div>
             <div class="col-sm">
-                <a href="{{ url_for('search', lang="go") }}"><button type="button" class="btn {{ color[11] }}">Go</button></a>
+                <a href="{{ url_for('search', lang="ruby") }}"><button type="button" class="btn btn-secondary">Ruby</button></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <a href="{{ url_for('search', lang="dart") }}"><button type="button" class="btn btn-warning">Dart</button></a>
+            </div>
+            <div class="col-sm">
+                <a href="{{ url_for('search', lang="kotlin") }}"><button type="button" class="btn btn-warning">Kotlin</button></a>
+            </div>
+            <div class="col-sm">
+                <a href="{{ url_for('search', lang="c") }}"><button type="button" class="btn btn-warning">C</button></a>
+            </div>
+            <div class="col-sm">
+                <a href="{{ url_for('search', lang="go") }}"><button type="button" class="btn btn-warning">Go</button></a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <a href="{{ url_for('search', lang="r") }}"><button type="button" class="btn btn-success">R</button></a>
+            </div>
+            <div class="col-sm">
+                <a href="{{ url_for('search', lang="scala") }}"><button type="button" class="btn btn-success">Scala</button></a>
+            </div>
+            <div class="col-sm">
+                <a href="{{ url_for('search', lang="perl") }}"><button type="button" class="btn btn-success">Perl</button></a>
+            </div>
+            <div class="col-sm">
+                <a href="{{ url_for('search', lang="rust") }}"><button type="button" class="btn btn-success">Rust</button></a>
             </div>
         </div>
     </div>

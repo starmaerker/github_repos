@@ -1,6 +1,5 @@
 from flask import Flask, render_template, url_for
 from search import search_repos
-from random_color import create_list
 
 
 app = Flask(__name__)
@@ -9,8 +8,7 @@ app = Flask(__name__)
 @app.route('/index')
 @app.route('/')
 def index():
-    color = create_list()
-    return render_template('index.html', color=color)
+    return render_template('index.html')
 
 
 @app.route('/search/<lang>')
