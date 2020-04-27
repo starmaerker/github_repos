@@ -2,13 +2,13 @@ import requests
 
 
 def search_repos(lang):
-    result = requests.get(f'https://api.github.com/search/repositories?q=language:{lang}&sort=stars&order=desc').json()
+    result = requests.get(
+        f'https://api.github.com/search/repositories?q=stars:>=1000 language:{lang}&sort=stars&order=desc&per_page=42').json()
     incomplete = result['incomplete_results']
-    counter = 0
     repo_list = {}
-    while counter < 30:
+    for counter in range(0, len(result['items'])):
         repo = result['items'][counter]
-        repo_list[counter] = [repo['name'], repo['description'], repo['stargazers_count'], repo['owner']['avatar_url'], repo['owner']['html_url']]
-        counter += 1
-    return repo_list, incomplete
+        repo_list[counter] = [repo['name'], repo['description'], repo['stargazers_count'], repo['owner']['avatar_url'],
+                              repo['html_url']]
 
+    return repo_list, incomplete
