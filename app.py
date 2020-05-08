@@ -1,8 +1,10 @@
 from flask import Flask, render_template, url_for
 from search import search_repos
+from config import Config
 
 
 app = Flask(__name__)
+app.config.from_object(Config)
 
 
 @app.route('/index')
