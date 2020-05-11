@@ -1,8 +1,7 @@
 import requests
-from config import Config
 
 
-def search_complete():
+def search_complete(username, token):
     languages = ['python', 'java', 'javascript', 'csharp', 'swift', 'haskell', 'php', 'ruby', 'dart', 'kotlin', 'c',
                  'go',
                  'r', 'scala', 'c%2B%2B', 'rust', 'powershell', 'html', 'css', 'typescript']
@@ -11,7 +10,7 @@ def search_complete():
         star_counter = 0
         result = requests.get(
             f'https://api.github.com/search/repositories?q=stars:>=1000 language:{_}&sort=stars&order=desc&per_page=20',
-            auth=(Config.USERNAME, Config.TOKEN)).json()
+            auth=(username, token)).json()
         print(result)
         for item in range(0, len(result['items'])):
             repo = result['items'][item]
@@ -22,10 +21,11 @@ def search_complete():
     return complete_dic
 
 
-def search_repos(lang):
+def search_repos(lang, username, token):
     star_counter = 0
     result = requests.get(
-        f'https://api.github.com/search/repositories?q=stars:>=1000 language:{lang}&sort=stars&order=desc&per_page=42').json()
+        f'https://api.github.com/search/repositories?q=stars:>=1000 language:{lang}&sort=stars&order=desc&per_page=42',
+        auth=(username, token)).json()
     repo_list = {}
     for counter in range(0, len(result['items'])):
         repo = result['items'][counter]

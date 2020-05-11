@@ -1,5 +1,4 @@
 from flask import Flask, render_template, url_for
-from search import search_repos
 from config import Config
 
 
@@ -15,9 +14,12 @@ def index():
 
 @app.route('/search/<lang>')
 def search(lang):
-    results, star_counter = search_repos(lang)
+    results, star_counter = search_repos(lang, app.config['USERNAME'], app.config['TOKEN'])
     return render_template('search.html', lang=lang, results=results, star_counter=star_counter)
 
 
 if __name__ == '__main__':
     app.run()
+
+
+from search import search_repos
