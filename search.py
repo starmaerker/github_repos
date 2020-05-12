@@ -1,26 +1,6 @@
 import requests
 
 
-def search_complete(username, token):
-    languages = ['python', 'java', 'javascript', 'csharp', 'swift', 'haskell', 'php', 'ruby', 'dart', 'kotlin', 'c',
-                 'go',
-                 'r', 'scala', 'c%2B%2B', 'rust', 'powershell', 'html', 'css', 'typescript']
-    complete_dic = {}
-    for _ in languages:
-        star_counter = 0
-        result = requests.get(
-            f'https://api.github.com/search/repositories?q=stars:>=1000 language:{_}&sort=stars&order=desc&per_page=20',
-            auth=(username, token)).json()
-        print(result)
-        for item in range(0, len(result['items'])):
-            repo = result['items'][item]
-            star_counter += repo['stargazers_count']
-
-        complete_dic[_] = star_counter
-
-    return complete_dic
-
-
 def search_repos(lang, username, token):
     star_counter = 0
     result = requests.get(
