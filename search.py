@@ -15,7 +15,8 @@ def search_repos(lang, username, token):
         star_counter += repo['stargazers_count']
 
     entry = Lang(name=lang, stargazers=star_counter)
-    db.session.add(entry)
-    db.session.commit()
+    if Lang.query.filter_by(name=lang).first() is None:
+        db.session.add(entry)
+        db.session.commit()
 
     return repo_list, star_counter
