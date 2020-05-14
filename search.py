@@ -1,6 +1,8 @@
 import requests
 from app import db
 from model import Lang
+from datetime import datetime
+
 
 def search_repos(lang, username, token):
     star_counter = 0
@@ -15,8 +17,14 @@ def search_repos(lang, username, token):
         star_counter += repo['stargazers_count']
 
     entry = Lang(name=lang, stargazers=star_counter)
-    if Lang.query.filter_by(name=lang).first() is None:
+    from_db = Lang.query.filter_by(name=lang).first()
+
+    if from_db is None:
         db.session.add(entry)
+        db.session.commit()
+    else:
+        from_db.stargazers = star_counter
+        from_db.timestamp = datetime.utcnow()
         db.session.commit()
 
     return repo_list, star_counter
