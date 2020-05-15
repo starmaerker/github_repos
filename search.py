@@ -28,3 +28,4 @@ def search_repos(lang, username, token):
         db.session.commit()
 
     return repo_list, star_counter
+

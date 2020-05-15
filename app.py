@@ -18,7 +18,8 @@ def make_shell_context():
 @app.route('/index')
 @app.route('/')
 def index():
-    return render_template('index.html')
+    list_db = Lang.query.order_by(Lang.stargazers.desc()).all()
+    return render_template('index.html', list_db=list_db)
 
 
 @app.route('/search/<lang>')

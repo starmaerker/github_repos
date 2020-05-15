@@ -9,4 +9,4 @@ class Lang(db.Model):
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
 
     def __repr__(self):
-        return '<Lang {}>'.format(self.name)
+        return self.name
