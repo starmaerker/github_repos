@@ -21,7 +21,9 @@ def index():
 
     result = db.engine.execute("SELECT name, real_name FROM lang ORDER BY stargazers DESC")
     search_names = [row[0] for row in result]
+    result = db.engine.execute("SELECT name, real_name FROM lang ORDER BY stargazers DESC")
     real_names = [row[1] for row in result]
+
 
     return render_template('index.html', search_names=search_names, real_names=real_names)
 
