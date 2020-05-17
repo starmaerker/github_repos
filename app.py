@@ -3,7 +3,6 @@ from config import Config
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
-
 app = Flask(__name__)
 app.config.from_object(Config)
 db = SQLAlchemy(app)
@@ -18,8 +17,13 @@ def make_shell_context():
 @app.route('/index')
 @app.route('/')
 def index():
-    list_db = Lang.query.order_by(Lang.stargazers.desc()).all()
-    return render_template('index.html', list_db=list_db)
+    #list_db = db.session.query(Lang).order_by(Lang.stargazers.desc()).all()
+
+    result = db.engine.execute("SELECT name, real_name FROM lang ORDER BY stargazers DESC")
+    search_names = [row[0] for row in result]
+    real_names = [row[1] for row in result]
+
+    return render_template('index.html', search_names=search_names, real_names=real_names)
 
 
 @app.route('/search/<lang>')
@@ -30,7 +34,6 @@ def search(lang):
 
 if __name__ == '__main__':
     app.run()
-
 
 from search import search_repos
 from model import Lang
