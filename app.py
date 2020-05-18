@@ -17,15 +17,12 @@ def make_shell_context():
 @app.route('/index')
 @app.route('/')
 def index():
-    #list_db = db.session.query(Lang).order_by(Lang.stargazers.desc()).all()
+    # list_db = db.session.query(Lang).order_by(Lang.stargazers.desc()).all()
 
     result = db.engine.execute("SELECT name, real_name FROM lang ORDER BY stargazers DESC")
-    search_names = [row[0] for row in result]
-    result = db.engine.execute("SELECT name, real_name FROM lang ORDER BY stargazers DESC")
-    real_names = [row[1] for row in result]
+    search_names = [(row[0], row[1]) for row in result]
 
-
-    return render_template('index.html', search_names=search_names, real_names=real_names)
+    return render_template('index.html', search_names=search_names)
 
 
 @app.route('/search/<lang>')
