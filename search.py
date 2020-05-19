@@ -3,6 +3,28 @@ from app import db
 from model import Lang
 from datetime import datetime
 
+language_dic = {"Python": "python",
+                "JavaScript": "javascript",
+                "Java": "java",
+                "C#": "csharp",
+                "Haskell": "haskell",
+                "PHP": "php",
+                "Ruby": "ruby",
+                "Go": "go",
+                "C": "c",
+                "Kotlin": "kotlin",
+                "Dart": "dart",
+                "R": "r",
+                "Swift": "swift",
+                "Scala": "scala",
+                "C++": "c%2B%2B",
+                "Rust": "rust",
+                "PowerShell": "powershell",
+                "HTML": "html",
+                "CSS": "css",
+                "TypeScript": "typescript"
+                }
+
 
 def search_repos(lang, username, token):
     star_counter = 0

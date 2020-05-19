@@ -75,5 +75,15 @@
             </div>
         </div>
     </div>
+{#    <hr>
+    <div class="container-fluid">
+        <div class="row">
+            {% for entry in search_names %}
+                <div class="col-sm">
+                <a href="{{ url_for('search', lang=entry[0]) }}"><button type="button" class="btn btn-primary">1.{{ entry[1] }}</button></a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>#}
 
 {% endblock %}
